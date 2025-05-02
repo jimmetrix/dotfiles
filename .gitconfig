@@ -1,0 +1,7 @@
+[init]
+	defaultBranch = main
+[fetch]
+	prune = true
+[user]
+	email = jmtrx@proton.me
+	name = jimmetrix
