@@ -1,0 +1,18 @@
+* {
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 14px;
+    color: rgba(255,255,255,255);
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    padding: 0 10px;
+}
+
+window#waybar {
+    margin: 4px;
+    border-radius: 5px;
+    border: 2px solid rgba(33,204,255,238);
+    background: transparent;
+}
