@@ -1,1 +1,1 @@
-dotfiles/bash/.bashrc
+PS1="\d \t \w> "
