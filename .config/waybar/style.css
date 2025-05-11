@@ -1,7 +1,7 @@
 * {
     font-family: JetBrainsMono Nerd Font;
     font-size: 14px;
-    color: rgba(255,255,255,255);
+    color: rgba(57,57,57,1);
 }
 
 .modules-left,
@@ -13,6 +13,6 @@
 window#waybar {
     margin: 4px;
     border-radius: 5px;
-    border: 2px solid rgba(33,204,255,238);
-    background: transparent;
+    border: 2px solid rgba(78,65,128,255);
+    background: rgba(201,214,177,0.5);
 }
