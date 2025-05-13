@@ -351,6 +351,14 @@ require("lazy").setup({
 	--
 	-- Use the `dependencies` key to specify the dependencies of a particular plugin
 
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		config = true,
+		-- use opts = {} for passing setup options
+		-- this is equivalent to setup({}) function
+	},
+
 	{ -- Fuzzy Finder (files, lsp, etc)
 		"nvim-telescope/telescope.nvim",
 		event = "VimEnter",
