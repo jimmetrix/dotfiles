@@ -36,6 +36,16 @@ TERMINAL=$(basename "$TERMINAL")
 # URL:  https://github.com/lptstr/fetchutils
 
 
+echo "
+    ___     ${USER}@$(hostname)
+   (.. |    os: $(../src/os)
+   (<> |    shell: ${SHELL}
+  / __  \   pkgs: $(../src/pkgs '$pkgs_total')
+ ( /  \ /|  uptime: $(../src/upt)
+_/\ __)/_)  memory: $(../src/mem)
+\/_____\/   kernel: $(uname -r)
+" 2>/dev/null
+
 # Start
 printf "\033[1;${COLOR}m${USER:-user}\033[0m@\033[1;${COLOR}m${HOSTNAME:-hostname}\033[0m
 \033[0m${SEPARATOR:----}\033[0m
