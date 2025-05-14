@@ -13,3 +13,6 @@ compinit
 # End of lines added by compinstall
 PROMPT='[ %? ]-[ %t %D ]-[ %B%n@%m%b ]-[ %~ ]
 %# '
+
+alias dot='cd ~/.dotfiles/'
+alias l='ls -a'
