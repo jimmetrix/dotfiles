@@ -4,7 +4,7 @@
 	"reload_style_on_change": true,
 	"modules-left": ["custom/notification","clock","custom/pacman","tray"],
 	"modules-center": ["hyprland/workspaces"],
-	"modules-right": ["group/expand","bluetooth","network","battery"],
+	"modules-right": ["custom/colorpicker","cpu","memory","temperature","bluetooth","network","battery"],
 
 	"hyprland/workspaces": {
 		"format": "{icon}",
@@ -47,7 +47,7 @@
 		"tooltip-format-disconnected": "Error",
 		"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
 		"tooltip-format-ethernet": "{ifname} 🖧 ",
-		"on-click": "ghostty nmtui"
+		"on-click": "nmtui"
 	},
 
 	"bluetooth": {
@@ -92,26 +92,7 @@
 		"signal": 8,
 		"tooltip": false,
 	},
-	
-	"custom/expand": {
-		"format": "",
-		"tooltip": false
-	},
 
-	"custom-endpoint": {
-		"format": "|",
-		"tooltip": false
-	},
-
-	"group/expand": {
-		"orientation": "horizontal",
-		"drawer": {
-			"transition-duration": 600,
-			"transition-to-left": true,
-			"click-to-reveal": true
-		},
-		"modules": ["custom/expand", "custom/colorpicker", "cpu", "memory", "temprature", "custom/endpoint"],
-	},
 	"custom/colorpicker": {
 		"format": "{}",
 		"return-type": "json",

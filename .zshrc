@@ -14,5 +14,6 @@ compinit
 PROMPT='[ %? ]-[ %t %D ]-[ %B%n@%m%b ]-[ %~ ]
 %# '
 
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 alias dot='cd ~/.dotfiles/'
 alias l='ls -a'
