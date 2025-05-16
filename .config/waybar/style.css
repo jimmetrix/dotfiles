@@ -1,28 +1,28 @@
 @import url('../../.cache/wal/colors-waybar.css');
 * {
-	font-size: 15px;
+	font-size: 14px;
 	font-family: "JetBrainsMono Nerd Font";
 }
 window#waybar {
 	all: unset;
 }
 .modules-left {
-	padding: 7px;
-	margin: 10 0 5 10;
+	padding: 5px;
+	margin: 5px 0px 1px 5px;
 	border-radius: 10px;
 	background: alpha(@background, .6);
 	box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
 }
 .modules-center {
-	padding: 7px;
-	margin: 10 0 5 0;
+	padding: 5px;
+	margin: 5px 0px 1px 0px;
 	border-radius: 10px;
 	background: alpha(@background, .6);
 	box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
 }
 .modules-right {
-	padding: 7px;
-	margin: 10 10 5 0;
+	padding: 5px;
+	margin: 5px 5px 1px 0px;
 	border-radius: 10px;
 	background: alpha(@background, .6);
 	box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
@@ -39,13 +39,15 @@ tooltip {
 #battery:hover,
 #cpu:hover,
 #memory:hover,
-#temperature:hover {
+#temperature:hover,
+#pulseaudio:hover {
 	transition: all .3s ease;
 	color: @color9;
 }
 #custom-notification,
 #clock,
-#custom-pacman {
+#custom-pacman,
+#pulseaudio {
 	padding: 0px 5px;
 	transition: all .3s ease;
 	color: @color7;
@@ -88,17 +90,19 @@ tooltip {
 }
 #bluetooth {
 	padding: 0px 5px;
+	margin-right: 5px;
 	transition: all .3s ease;
 	color: @color7;
 }
 #battery {
 	padding: 0px 5px;
+	margin-right: 5px;
 	transition: all .3s ease;
 	color: @color7;
 }
 #network {
-	padding: 0px 10px;
 	transition: all .3s ease;
+	margin-right: 10px;
 	color: @color7;
 }
 #battery.charging {
@@ -117,28 +121,31 @@ tooltip {
 }
 #custom-colorpicker {
 	padding: 0px 5px;
+	margin-right: 5px;
 }
 #cpu {
-padding: 0px 5px 0px 5px;
+	padding: 0px 5px;
 	color: @color7;
 }
 #memory {
-padding: 0px 5px 0px 5px;
+	padding: 0px 5px;
+	margin-right: 5px;
 	color: @color7;
 }
 #temperature {
-	padding: 0px 5px 0px 5px;
+	padding: 0px 5px;
 	color: @color7;
 }
 #tray {
 	padding: 0px 5px;
+	margin-right: 5px;
 	transition: all .3s ease;
 }
 #tray menu * {
 	padding: 0px 5px;
 	transition: all .3s ease;
 }
-#tray menu seperator {
+#tray menu separator {
 	padding: 0px 5px;
 	transition: all .3s ease;
 }

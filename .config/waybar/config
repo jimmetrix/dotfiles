@@ -4,7 +4,7 @@
 	"reload_style_on_change": true,
 	"modules-left": ["custom/notification","clock","custom/pacman","tray"],
 	"modules-center": ["hyprland/workspaces"],
-	"modules-right": ["custom/colorpicker","cpu","memory","temperature","bluetooth","network","battery"],
+	"modules-right": ["custom/colorpicker","cpu","memory","temperature","bluetooth","network","pulseaudio","battery"],
 
 	"hyprland/workspaces": {
 		"format": "{icon}",
@@ -72,7 +72,7 @@
 		},
 		"format": "{capacity}% {icon}",
 		"format-charging": "{capacity}% 󰂄",
-		"format-plugged": "{capacity}% 󰂄 ",
+		"format-plugged": "{capacity}% 󰂄",
 		"format-alt": "{time} {icon}",
 		"format-icons": [
 			"󰁻",
@@ -82,6 +82,25 @@
             "󰂂",
             "󰁹"
 		],
+	},
+	"pulseaudio": {
+		"format": "{volume}% {icon}",
+		"format-bluetooth": "{volume}% {icon} {format_source}",
+		"format-bluetooth-muted": " {icon} {format_source}",
+		"format-muted": "0% {icon}",
+		"format-source": "{volume}% ",
+		"format-source-muted": "",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["", "", ""]
+		},
+		"scroll-step": 1,
+		"on-click": "pavucontrol"
 	},
 	"custom/pacman": {
 		"format": "󰅢 {}",
