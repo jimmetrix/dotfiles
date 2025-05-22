@@ -103,7 +103,7 @@
 		"on-click": "pavucontrol"
 	},
 	"custom/pacman": {
-		"format": "󰅢 {}",
+		"format": "󰅢  {}",
 		"interval": 30,
 		"exec": "checkupdates | wc -l",
 		"exec-if": "exit 0",
@@ -124,11 +124,12 @@
 		"tooltip": true
 	},
 	"memory": {
-		"format": ""
+		"format": "  {percentage}%",
+		"tooltip": true
 	},
 	"temperature": {
 		"critical-threshold": 80,
-		"format": "",
+		"format": " {temperatureC}°C",
 	},
 	"tray": {
 		"icon-size": 14,
