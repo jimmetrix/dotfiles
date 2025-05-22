@@ -110,3 +110,4 @@ source $ZSH/oh-my-zsh.sh
 alias dot='cd ~/.dotfiles/'
 echo "when you actually get a say and control in your life
 ill have trust"
+eval "$(zoxide init zsh)"
