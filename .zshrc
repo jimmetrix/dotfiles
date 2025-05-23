@@ -108,6 +108,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias dot='cd ~/.dotfiles/'
+alias jim='cd ~/jimmetrix/'
 echo "when you actually get a say and control in your life
 ill have trust"
 eval "$(zoxide init zsh)"
