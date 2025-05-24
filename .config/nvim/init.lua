@@ -1,14 +1,3 @@
--- NOTE: Changes are:
--- telescope searches from home directory regardless of where current buffer is.
--- telescope displays hidden files.
--- telescope displays ignored files by .gitignore.
--- enabled several LSPs.
--- changed theme to ayu.
--- disabled arrowkeys.
--- change theme to ayu dark.
--- add relative line numbers.
---
---
 -- Leader Key
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -228,7 +217,7 @@ require('lazy').setup({
         builtin.find_files {
           cwd = '~',
           hidden = true,
-          no_ignore = true,
+          no_ignore = false,
         }
       end, { desc = '[S]earch [F]iles' })
       vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
@@ -567,6 +556,7 @@ require('lazy').setup({
       vim.opt.termguicolors = true
       vim.g.ayucolor = 'dark'
       vim.cmd [[colorscheme ayu]]
+      vim.api.nvim_set_hl(0, 'CursorLine', { bg = '#1a222b' })
     end,
   },
 
