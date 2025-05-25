@@ -122,8 +122,32 @@ require('lazy').setup({
     priority = 1000,
     config = function()
       vim.g.ayucolor = 'dark'
-      vim.cmd [[colorscheme ayu]]
-      vim.api.nvim_set_hl(0, 'CursorLine', { bg = '#1a222b' })
+      vim.cmd.colorscheme 'ayu'
+      -- Common file types:
+      vim.cmd 'highlight DevIconsLua guifg=#FFC107' -- Example: Ayu's yellow/orange
+      vim.cmd 'highlight DevIconsJavaScript guifg=#FFC107' -- Example: Ayu's yellow/orange
+      vim.cmd 'highlight DevIconsTypeScript guifg=#2196F3' -- Example: Ayu's blue
+      vim.cmd 'highlight DevIconsPython guifg=#00FFCC' -- Example: Ayu's green/cyan
+      vim.cmd 'highlight DevIconsHtml guifg=#E57373' -- Example: Ayu's red/orange
+      vim.cmd 'highlight DevIconsCss guifg=#64B5F6' -- Example: Ayu's light blue
+      vim.cmd 'highlight DevIconsJson guifg=#FF5722' -- Example: Ayu's darker orange/red
+      vim.cmd 'highlight DevIconsMarkdown guifg=#D0D0D0' -- Example: Neutral gray/white
+
+      -- Folder Icon:
+      vim.cmd 'highlight DevIconsFolder guifg=#8be9fd' -- Example: Ayu's light blue for folders
+
+      -- Default (generic) file icon color (if .txt is already green, it might be this one):
+      -- If .txt is green, maybe DevIconsDefault is linked to a green group, or
+      -- you specifically have an override.
+      -- If you want all "other" files to be green too, you could use this:
+      -- vim.cmd("highlight DevIconsDefault guifg=#00FFCC")
+
+      -- Git Status Icons (if you want them colored by devicons):
+      vim.cmd 'highlight DevIconsGitIgnored guifg=#9e9e9e' -- Example: muted gray
+      vim.cmd 'highlight DevIconsGitUntracked guifg=#FFA000' -- Example: orange
+      vim.cmd 'highlight DevIconsGitModified guifg=#FFD700' -- Example: yellow
+      vim.cmd 'highlight DevIconsGitStaged guifg=#00FF00' -- Example: green
+      -- ... and so on for other git statuses.
     end,
   },
 
