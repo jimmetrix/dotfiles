@@ -20,6 +20,7 @@ return {
           ['\\'] = 'close_window',
         },
       },
+      show_hidden = true,
     },
     highlight = {
       highlight_directories_with_devicons = true,
