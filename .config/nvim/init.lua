@@ -116,6 +116,16 @@ rtp:prepend(lazypath)
 require('lazy').setup({
 
   'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
+  {
+    'ayu-theme/ayu-vim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.g.ayucolor = 'dark'
+      vim.cmd [[colorscheme ayu]]
+      vim.api.nvim_set_hl(0, 'CursorLine', { bg = '#1a222b' })
+    end,
+  },
 
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -581,17 +591,6 @@ require('lazy').setup({
       -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
       lazy = false,
     },
-  },
-
-  {
-    'ayu-theme/ayu-vim',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.g.ayucolor = 'dark'
-      vim.cmd [[colorscheme ayu]]
-      vim.api.nvim_set_hl(0, 'CursorLine', { bg = '#1a222b' })
-    end,
   },
 
   -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
