@@ -135,7 +135,7 @@ require('lazy').setup({
 
       -- Folder Icon:
       vim.cmd 'highlight DevIconsFolder guifg=#8be9fd' -- Example: Ayu's light blue for folders
-
+      vim.cmd 'highlight link Hidden Normal'
       -- Default (generic) file icon color (if .txt is already green, it might be this one):
       -- If .txt is green, maybe DevIconsDefault is linked to a green group, or
       -- you specifically have an override.
