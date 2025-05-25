@@ -47,7 +47,8 @@ tooltip {
 #custom-notification,
 #clock,
 #custom-pacman,
-#pulseaudio {
+#pulseaudio,
+#window {
 	padding: 0px 5px;
 	transition: all .3s ease;
 	color: @color7;
