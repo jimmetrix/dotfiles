@@ -1,3 +1,5 @@
+-- Terminal Colors
+vim.opt.termguicolors = true
 -- Leader Key
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -114,6 +116,41 @@ rtp:prepend(lazypath)
 require('lazy').setup({
 
   'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
+  {
+    'ayu-theme/ayu-vim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.g.ayucolor = 'dark'
+      vim.cmd.colorscheme 'ayu'
+      -- Common file types:
+      vim.cmd 'highlight DevIconsLua guifg=#FFC107' -- Example: Ayu's yellow/orange
+      vim.cmd 'highlight DevIconsJavaScript guifg=#FFC107' -- Example: Ayu's yellow/orange
+      vim.cmd 'highlight DevIconsTypeScript guifg=#2196F3' -- Example: Ayu's blue
+      vim.cmd 'highlight DevIconsPython guifg=#00FFCC' -- Example: Ayu's green/cyan
+      vim.cmd 'highlight DevIconsHtml guifg=#E57373' -- Example: Ayu's red/orange
+      vim.cmd 'highlight DevIconsCss guifg=#64B5F6' -- Example: Ayu's light blue
+      vim.cmd 'highlight DevIconsJson guifg=#FF5722' -- Example: Ayu's darker orange/red
+      vim.cmd 'highlight DevIconsMarkdown guifg=#D0D0D0' -- Example: Neutral gray/white
+
+      -- Folder Icon:
+      vim.cmd 'highlight DevIconsFolder guifg=#8be9fd' -- Example: Ayu's light blue for folders
+      vim.cmd 'highlight link Hidden DevIconsDefault' -- This will apply the default devicon color
+      -- vim.cmd 'highlight link Hidden Normal'
+      -- Default (generic) file icon color (if .txt is already green, it might be this one):
+      -- If .txt is green, maybe DevIconsDefault is linked to a green group, or
+      -- you specifically have an override.
+      -- If you want all "other" files to be green too, you could use this:
+      -- vim.cmd("highlight DevIconsDefault guifg=#00FFCC")
+
+      -- Git Status Icons (if you want them colored by devicons):
+      vim.cmd 'highlight DevIconsGitIgnored guifg=#9e9e9e' -- Example: muted gray
+      vim.cmd 'highlight DevIconsGitUntracked guifg=#FFA000' -- Example: orange
+      vim.cmd 'highlight DevIconsGitModified guifg=#FFD700' -- Example: yellow
+      vim.cmd 'highlight DevIconsGitStaged guifg=#00FF00' -- Example: green
+      -- ... and so on for other git statuses.
+    end,
+  },
 
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -176,6 +213,18 @@ require('lazy').setup({
     },
   },
 
+  {
+    'nvim-tree/nvim-web-devicons',
+    enabled = vim.g.have_nerd_font,
+    lazy = false,
+    config = function()
+      require('nvim-web-devicons').setup {
+        color_icons = true,
+        default = true,
+      }
+    end,
+  },
+
   { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',
@@ -188,9 +237,12 @@ require('lazy').setup({
           return vim.fn.executable 'make' == 1
         end,
       },
+
       { 'nvim-telescope/telescope-ui-select.nvim' },
-      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+
+      { 'nvim-tree/nvim-web-devicons' },
     },
+
     config = function()
       -- [[ Configure Telescope ]]
       require('telescope').setup {
@@ -566,24 +618,12 @@ require('lazy').setup({
     },
   },
 
-  {
-    'ayu-theme/ayu-vim',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.opt.termguicolors = true
-      vim.g.ayucolor = 'dark'
-      vim.cmd [[colorscheme ayu]]
-      vim.api.nvim_set_hl(0, 'CursorLine', { bg = '#1a222b' })
-    end,
-  },
-
   -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
+  require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
