@@ -533,6 +533,10 @@ require('lazy').setup({
       end
     end,
   },
+  {
+    'christoomey/vim-tmux-navigator',
+    lazy = false,
+  },
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
