@@ -65,7 +65,7 @@ vim.o.scrolloff = 10
 vim.o.confirm = true
 
 require 'configs.keymaps'
-
+require 'configs.autocommands'
 -- Install `lazy.nvim` plugin manager
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
