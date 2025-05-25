@@ -21,9 +21,5 @@ return {
         },
       },
     },
-    highlight = {
-      highlight_directories_with_devicons = true,
-      highlight_files_with_devicons = true,
-    },
   },
 }
