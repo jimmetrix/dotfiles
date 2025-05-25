@@ -1,3 +1,5 @@
+-- Terminal Colors
+vim.opt.termguicolors = true
 -- Leader Key
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -176,6 +178,18 @@ require('lazy').setup({
     },
   },
 
+  {
+    'nvim-tree/nvim-web-devicons',
+    enabled = vim.g.have_nerd_font,
+    lazy = false,
+    config = function()
+      require('nvim-web-devicons').setup {
+        color_icons = true,
+        default = true,
+      }
+    end,
+  },
+
   { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',
@@ -188,9 +202,12 @@ require('lazy').setup({
           return vim.fn.executable 'make' == 1
         end,
       },
+
       { 'nvim-telescope/telescope-ui-select.nvim' },
-      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+
+      { 'nvim-tree/nvim-web-devicons' },
     },
+
     config = function()
       -- [[ Configure Telescope ]]
       require('telescope').setup {
@@ -571,7 +588,6 @@ require('lazy').setup({
     lazy = false,
     priority = 1000,
     config = function()
-      vim.opt.termguicolors = true
       vim.g.ayucolor = 'dark'
       vim.cmd [[colorscheme ayu]]
       vim.api.nvim_set_hl(0, 'CursorLine', { bg = '#1a222b' })
