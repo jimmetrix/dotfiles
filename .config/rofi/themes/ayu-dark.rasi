@@ -6,16 +6,21 @@
    lightcyan:        #B48EAD;
    green:            #bae67e;
    red:              #ff3333;
+   orange:           #ff773355;
 
-   dark1:            #0a0e14;
-   dark2:            #1f2430;
-   dark3:            #b3b1ad;
-   dark4:            #b3b1ad;
+   dark1:            #0a0e1400;
+   dark2:            #1f2430cc;
+   dark3:            #b3b1adcc;
+   dark4:            #b3b1adcc;
 
    light1:           #e6e1cf;
 
    background-color: @dark1;
-   border-color:     @dark2;
+   window-bg:        #0a0e14dd;
+   mainbox-bg:       #0a0e1400;
+   listview-bg:       #0a0e1400;
+   inputbar-bg:       #0a0e1400;
+   border-color:     @orange;
    text-color:       @dark3;
    dark-text-color:  @dark4;
    main-color:       @blue;
@@ -25,18 +30,19 @@
 }
 
 window {
-   background-color: @background-color;
+   background-color: @window-bg;
    width: 33%;
    padding: 10px;
    fullscreen: false;
-   border:  2px;
-   border-radius: 0px;
+   // border:  2px;
+   border-radius: 8px;
    border-color: @border-color;
 }
 
 mainbox {
-   background-color: @background-color;
-   spacing:0px;
+   background-color: @mainbox-bg;
+   spacing: 2px;
+   margin: 2px;
 }
 
 message {
@@ -54,17 +60,18 @@ listview {
    dynamic: true;
    scrollbar: false;
    spacing: 0px;
-   padding: 1px 0px 0px 0px;
-   margin: 0px 0px 1px 0px;
-   background: @background-color;
+   padding: 8px;
+   margin: 2px;
+   background: @listview-bg;
 }
 
 element {
-   padding: 4px 10px;
+   padding: 4px 6px;
+   border-radius: 6px;
 }
 
 element normal.normal {
-   padding: 0px 15px;
+   padding: 2px;
    background-color: @background-color;
    text-color: @dark-text-color;
 }
@@ -80,18 +87,24 @@ element normal.active {
 }
 
 element selected.normal {
-    background-color: @border-color;
+    // border: 2px;
+    background-color: @orange;
     text-color:       @selected-color;
+    padding: 10px;
 }
 
 element selected.urgent {
+    // border: 2px;
     background-color: @urgent-color;
     text-color:       @background-color;
+    padding: 10px;
 }
 
 element selected.active {
+    // border: 2px;
     background-color: @border-color;
     text-color:       @green;
+    padding: 10px;
 }
 
 element alternate.normal {
@@ -129,7 +142,7 @@ button selected {
 }
 
 inputbar {
-   background-color: @background-color;
+   background-color: @inputbar-bg;
    spacing: 0px;
    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
 }
