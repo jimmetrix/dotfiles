@@ -14,15 +14,15 @@ else
   set shortmess=aoO
 endif
 badd +1 .config/nvim/init.lua
-badd +11 ~/.dotfiles/.config/nvim/lua/plugins/init.lua
-badd +0 .zshrc
+badd +1 ~/.dotfiles/.config/nvim/lua/plugins/init.lua
+badd +115 .zshrc
 argglobal
 %argdel
-edit .zshrc
+edit ~/.dotfiles/.config/nvim/lua/plugins/init.lua
 argglobal
-balt ~/.dotfiles/.config/nvim/lua/plugins/init.lua
+balt .zshrc
 setlocal foldmethod=manual
-setlocal foldexpr=0
+setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
 setlocal foldmarker={{{,}}}
 setlocal foldignore=#
 setlocal foldlevel=0
