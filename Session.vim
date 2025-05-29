@@ -14,7 +14,7 @@ else
   set shortmess=aoO
 endif
 badd +1 .config/nvim/init.lua
-badd +1 ~/.dotfiles/.config/nvim/lua/plugins/init.lua
+badd +6 ~/.dotfiles/.config/nvim/lua/plugins/init.lua
 badd +115 .zshrc
 argglobal
 %argdel
@@ -31,11 +31,11 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 15) / 31)
+let s:l = 6 - ((5 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 6
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'

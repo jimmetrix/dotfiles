@@ -54,3 +54,6 @@ vim.o.scrolloff = 10
 
 -- Dialog asking if you wish to save the current file(s)
 vim.o.confirm = true
+
+-- Augment Workspaces
+vim.g.augment_workspace_folders = '~/projects/srmd.dev'
