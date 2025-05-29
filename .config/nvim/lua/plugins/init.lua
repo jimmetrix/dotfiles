@@ -9,6 +9,7 @@ return {
   require('lazy').setup({
 
     'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
+    'tpope/vim-obsession',
     {
       'ayu-theme/ayu-vim',
       lazy = false,
