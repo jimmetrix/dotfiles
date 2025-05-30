@@ -113,3 +113,4 @@ eval "$(zoxide init zsh)"
 alias dot='z ~/.dotfiles/'
 alias jim='z ~/jimmetrix/'
 alias srmd='z ~/projects/srmd.dev/'
+alias rd='rm -rf'
