@@ -16,10 +16,20 @@ endif
 badd +1 .config/nvim/init.lua
 badd +7 ~/.dotfiles/.config/nvim/lua/plugins/init.lua
 badd +115 .zshrc
-badd +0 .config/hypr/hyprland.conf
+badd +4 .config/hypr/hyprland.conf
+badd +1 ~/.dotfiles/.config/hypr/monitors.conf
+badd +59 ~/.dotfiles/.config/hypr/enviroment.conf
+badd +1 ~/.dotfiles/.config/hypr/autostart.conf
+badd +1 ~/.dotfiles/.config/hypr/animations.conf
+badd +1 ~/.dotfiles/.config/hypr/input.conf
 argglobal
 %argdel
 edit .config/hypr/hyprland.conf
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -28,7 +38,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt ~/.dotfiles/.config/nvim/lua/plugins/init.lua
+balt ~/.dotfiles/.config/hypr/enviroment.conf
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -39,12 +49,12 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 15) / 31)
+let s:l = 4 - ((3 * winheight(0) + 14) / 29)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 0
+keepjumps 4
+normal! 051|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -60,7 +70,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 let g:this_session = v:this_session
 let g:this_obsession = v:this_session
 doautoall SessionLoadPost
