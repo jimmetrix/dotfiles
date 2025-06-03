@@ -16,12 +16,14 @@ endif
 badd +1 .config/nvim/init.lua
 badd +7 ~/.dotfiles/.config/nvim/lua/plugins/init.lua
 badd +115 .zshrc
-badd +4 .config/hypr/hyprland.conf
+badd +1 .config/hypr/hyprland.conf
 badd +1 ~/.dotfiles/.config/hypr/monitors.conf
 badd +59 ~/.dotfiles/.config/hypr/enviroment.conf
 badd +1 ~/.dotfiles/.config/hypr/autostart.conf
 badd +1 ~/.dotfiles/.config/hypr/animations.conf
 badd +1 ~/.dotfiles/.config/hypr/input.conf
+badd +1 ~/.dotfiles/.config/hypr/modules/animations.conf
+badd +1 ~/.dotfiles/.config/hypr/modules/autostart.conf
 argglobal
 %argdel
 edit .config/hypr/hyprland.conf
@@ -38,7 +40,6 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt ~/.dotfiles/.config/hypr/enviroment.conf
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -49,12 +50,12 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 4 - ((3 * winheight(0) + 14) / 29)
+let s:l = 1 - ((0 * winheight(0) + 14) / 29)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 4
-normal! 051|
+keepjumps 1
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
