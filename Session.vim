@@ -16,7 +16,7 @@ endif
 badd +1 .config/nvim/init.lua
 badd +7 ~/.dotfiles/.config/nvim/lua/plugins/init.lua
 badd +115 .zshrc
-badd +1 .config/hypr/hyprland.conf
+badd +7 .config/hypr/hyprland.conf
 badd +1 ~/.dotfiles/.config/hypr/monitors.conf
 badd +59 ~/.dotfiles/.config/hypr/enviroment.conf
 badd +1 ~/.dotfiles/.config/hypr/autostart.conf
@@ -24,9 +24,11 @@ badd +1 ~/.dotfiles/.config/hypr/animations.conf
 badd +1 ~/.dotfiles/.config/hypr/input.conf
 badd +1 ~/.dotfiles/.config/hypr/modules/animations.conf
 badd +1 ~/.dotfiles/.config/hypr/modules/autostart.conf
+badd +59 ~/.dotfiles/.config/hypr/modules/environment.conf
+badd +0 ~/.dotfiles/.config/hypr/modules/windowrules.conf
 argglobal
 %argdel
-edit .config/hypr/hyprland.conf
+edit ~/.dotfiles/.config/hypr/modules/windowrules.conf
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -40,6 +42,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
+balt .config/hypr/hyprland.conf
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -50,7 +53,7 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 14) / 29)
+let s:l = 1 - ((0 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
