@@ -16,7 +16,7 @@ endif
 badd +1 .config/nvim/init.lua
 badd +7 ~/.dotfiles/.config/nvim/lua/plugins/init.lua
 badd +115 .zshrc
-badd +7 .config/hypr/hyprland.conf
+badd +9 .config/hypr/hyprland.conf
 badd +1 ~/.dotfiles/.config/hypr/monitors.conf
 badd +59 ~/.dotfiles/.config/hypr/enviroment.conf
 badd +1 ~/.dotfiles/.config/hypr/autostart.conf
@@ -24,11 +24,16 @@ badd +1 ~/.dotfiles/.config/hypr/animations.conf
 badd +1 ~/.dotfiles/.config/hypr/input.conf
 badd +1 ~/.dotfiles/.config/hypr/modules/animations.conf
 badd +1 ~/.dotfiles/.config/hypr/modules/autostart.conf
-badd +59 ~/.dotfiles/.config/hypr/modules/environment.conf
-badd +0 ~/.dotfiles/.config/hypr/modules/windowrules.conf
+badd +1 ~/.dotfiles/.config/hypr/modules/environment.conf
+badd +3 ~/.dotfiles/.config/hypr/modules/windowrules.conf
+badd +1 ~/.dotfiles/.config/hypr/modules/general.conf
+badd +1 ~/.dotfiles/.config/hypr/modules/decorations.conf
+badd +1 ~/.dotfiles/.config/hypr/modules/dwindle.conf
+badd +1 ~/.dotfiles/.config/hypr/modules/master.conf
+badd +2 ~/.dotfiles/.config/hypr/modules/misc.conf
 argglobal
 %argdel
-edit ~/.dotfiles/.config/hypr/modules/windowrules.conf
+edit ~/.dotfiles/.config/hypr/modules/environment.conf
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
