@@ -24,16 +24,16 @@ badd +1 ~/.dotfiles/.config/hypr/animations.conf
 badd +1 ~/.dotfiles/.config/hypr/input.conf
 badd +1 ~/.dotfiles/.config/hypr/modules/animations.conf
 badd +1 ~/.dotfiles/.config/hypr/modules/autostart.conf
-badd +1 ~/.dotfiles/.config/hypr/modules/environment.conf
+badd +3 ~/.dotfiles/.config/hypr/modules/environment.conf
 badd +3 ~/.dotfiles/.config/hypr/modules/windowrules.conf
-badd +1 ~/.dotfiles/.config/hypr/modules/general.conf
+badd +4 ~/.dotfiles/.config/hypr/modules/general.conf
 badd +1 ~/.dotfiles/.config/hypr/modules/decorations.conf
-badd +1 ~/.dotfiles/.config/hypr/modules/dwindle.conf
+badd +3 ~/.dotfiles/.config/hypr/modules/dwindle.conf
 badd +1 ~/.dotfiles/.config/hypr/modules/master.conf
 badd +2 ~/.dotfiles/.config/hypr/modules/misc.conf
 argglobal
 %argdel
-edit ~/.dotfiles/.config/hypr/modules/environment.conf
+edit ~/.dotfiles/.config/hypr/modules/animations.conf
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -47,7 +47,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt .config/hypr/hyprland.conf
+balt ~/.dotfiles/.config/hypr/modules/general.conf
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
