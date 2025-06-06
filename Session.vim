@@ -22,18 +22,20 @@ badd +59 ~/.dotfiles/.config/hypr/enviroment.conf
 badd +1 ~/.dotfiles/.config/hypr/autostart.conf
 badd +1 ~/.dotfiles/.config/hypr/animations.conf
 badd +1 ~/.dotfiles/.config/hypr/input.conf
-badd +1 ~/.dotfiles/.config/hypr/modules/animations.conf
+badd +2 ~/.dotfiles/.config/hypr/modules/animations.conf
 badd +1 ~/.dotfiles/.config/hypr/modules/autostart.conf
 badd +3 ~/.dotfiles/.config/hypr/modules/environment.conf
 badd +3 ~/.dotfiles/.config/hypr/modules/windowrules.conf
 badd +4 ~/.dotfiles/.config/hypr/modules/general.conf
 badd +1 ~/.dotfiles/.config/hypr/modules/decorations.conf
-badd +3 ~/.dotfiles/.config/hypr/modules/dwindle.conf
+badd +1 ~/.dotfiles/.config/hypr/modules/dwindle.conf
 badd +1 ~/.dotfiles/.config/hypr/modules/master.conf
 badd +2 ~/.dotfiles/.config/hypr/modules/misc.conf
+badd +87 ~/.dotfiles/.config/hypr/modules/input.conf
+badd +1 ~/.dotfiles/.config/hypr/modules/monitors.conf
 argglobal
 %argdel
-edit ~/.dotfiles/.config/hypr/modules/animations.conf
+edit ~/.dotfiles/.config/hypr/modules/general.conf
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -47,7 +49,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt ~/.dotfiles/.config/hypr/modules/general.conf
+balt ~/.dotfiles/.config/hypr/modules/environment.conf
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -58,12 +60,12 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 15) / 31)
+let s:l = 4 - ((3 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 0
+keepjumps 4
+normal! 019|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
