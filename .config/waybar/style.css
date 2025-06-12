@@ -1,3 +1,4 @@
+/* TODO: change all the scss variables (not gonna use pywal anymore) */
 @import url('../../.cache/wal/colors-waybar.css');
 * {
 	font-size: 14px;
@@ -69,17 +70,17 @@ tooltip {
 	transition: all 1s ease;
 }
 #workspaces button.active {
-	color: @color9;
+	color: @color7;
 	border: none;
 	text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
 }
 #workspaces button.empty {
-	color: rgba(0,0,0,0);
+	color: alpha(white, .4);
 	border: none;
 	text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
 }
 #workspaces button.empty:hover {
-	color: rgba(0,0,0,0);
+	color: alpha(white, .8);
 	border: none;
 	text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
 	transition: all 1s ease;
