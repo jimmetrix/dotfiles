@@ -33,9 +33,10 @@ badd +1 ~/.dotfiles/.config/hypr/modules/master.conf
 badd +2 ~/.dotfiles/.config/hypr/modules/misc.conf
 badd +87 ~/.dotfiles/.config/hypr/modules/input.conf
 badd +1 ~/.dotfiles/.config/hypr/modules/monitors.conf
+badd +0 ~/.dotfiles/.config/nvim/lua/configs/options.lua
 argglobal
 %argdel
-edit ~/.dotfiles/.config/hypr/modules/general.conf
+edit ~/.dotfiles/.config/nvim/lua/configs/options.lua
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -49,9 +50,9 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt ~/.dotfiles/.config/hypr/modules/environment.conf
+balt ~/.dotfiles/.config/hypr/modules/general.conf
 setlocal foldmethod=manual
-setlocal foldexpr=0
+setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
 setlocal foldmarker={{{,}}}
 setlocal foldignore=#
 setlocal foldlevel=0
@@ -60,12 +61,12 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 4 - ((3 * winheight(0) + 24) / 48)
+let s:l = 1 - ((0 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 4
-normal! 019|
+keepjumps 1
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

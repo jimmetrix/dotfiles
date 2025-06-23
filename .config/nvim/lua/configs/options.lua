@@ -56,4 +56,4 @@ vim.o.scrolloff = 10
 vim.o.confirm = true
 
 -- Augment Workspaces
-vim.g.augment_workspace_folders = '~/projects/srmd.dev'
+vim.g.augment_workspace_folders = { '~/projects/srmd.dev' }
