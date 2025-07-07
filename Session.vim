@@ -33,7 +33,7 @@ badd +1 ~/.dotfiles/.config/hypr/modules/master.conf
 badd +2 ~/.dotfiles/.config/hypr/modules/misc.conf
 badd +87 ~/.dotfiles/.config/hypr/modules/input.conf
 badd +1 ~/.dotfiles/.config/hypr/modules/monitors.conf
-badd +0 ~/.dotfiles/.config/nvim/lua/configs/options.lua
+badd +59 ~/.dotfiles/.config/nvim/lua/configs/options.lua
 argglobal
 %argdel
 edit ~/.dotfiles/.config/nvim/lua/configs/options.lua
@@ -61,12 +61,12 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 15) / 31)
+let s:l = 59 - ((29 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 0
+keepjumps 59
+normal! 036|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

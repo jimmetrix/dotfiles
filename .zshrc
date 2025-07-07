@@ -95,7 +95,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
-
+export ELECTRON_OZONE_PLATFORM_HINT=auto
 # Set personal aliases, overriding those provided by Oh My Zsh libs,
 # plugins, and themes. Aliases can be placed here, though Oh My Zsh
 # users are encouraged to define aliases within a top-level file in
@@ -114,4 +114,3 @@ alias dot='z ~/.dotfiles/'
 alias jim='z ~/jimmetrix/'
 alias srmd='z ~/projects/srmd.dev/'
 alias rd='rm -rf'
-alias pingg='ping google.com'
